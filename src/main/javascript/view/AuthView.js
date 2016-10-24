@@ -40,7 +40,12 @@ SwaggerUi.Views.AuthView = Backbone.View.extend({
     },
 
     render: function () {
-        this.$innerEl.html(this.authsCollectionView.render().el);
+        var authsEl = this.authsCollectionView.render().el;
+        if (!authsEl.hasChildNodes()) {
+            this.$el.html("");
+        } else {
+            this.$innerEl.html(authsEl);
+        }
 
         return this;
     },

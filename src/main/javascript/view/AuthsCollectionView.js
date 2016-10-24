@@ -25,6 +25,10 @@ SwaggerUi.Views.AuthsCollectionView = Backbone.View.extend({
 
     renderOneAuth: function (authModel) {
         var authViewEl, authView, authViewName;
+        var flow = authModel.get('flow');
+        if (flow !== 'implicit') {
+            return;
+        }
         var type = authModel.get('type');
 
         if (type === 'apiKey') {
@@ -36,6 +40,10 @@ SwaggerUi.Views.AuthsCollectionView = Backbone.View.extend({
         }
 
         if (authViewName) {
+            var title = authModel.get("title");
+            //authModel.set('authTitle', title);
+            //console.log("Title: " + title)
+            //console.log("AuthModel: "+JSON.stringify(authModel));
             authView = new SwaggerUi.Views[authViewName]({model: authModel, router: this.router});
             authViewEl = authView.render().el;
             this.authViews.push(authView);

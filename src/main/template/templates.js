@@ -234,7 +234,9 @@ templates['oauth2'] = template({"1":function(container,depth0,helpers,partials,d
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing;
 
-  return "<div>\n    <h3 class=\"auth__title\">Select OAuth2.0 Scopes</h3>\n    <p>"
+  return "<div>\n    <h3 class=\"auth__title\">Select OAuth2.0 Scopes</h3>\n    <h2>"
+    + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.title : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
+    + "</h2>\n    <p>"
     + ((stack1 = (helpers.sanitize || (depth0 && depth0.sanitize) || alias2).call(alias1,(depth0 != null ? depth0.description : depth0),{"name":"sanitize","hash":{},"data":data})) != null ? stack1 : "")
     + "</p>\n    <p>Scopes are used to grant an application different levels of access to data on behalf of the end user. Each API may declare one or more scopes.\n        <a href=\"#\">Learn how to use</a>\n    </p>\n    <p><strong> "
     + ((stack1 = (helpers.escape || (depth0 && depth0.escape) || alias2).call(alias1,(depth0 != null ? depth0.appName : depth0),{"name":"escape","hash":{},"data":data})) != null ? stack1 : "")
